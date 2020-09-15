@@ -22,7 +22,7 @@ Stretch Goals:
 
 ### Stacks
 * Should have the methods: `push`, `pop`, and `len`.
-   * `push` adds an item to the top of the stack.
+   * `push` adds an item to th e top of the stack.
    * `pop` removes and returns the element at the top of the stack
    * `len` returns the number of elements in the stack.
 
