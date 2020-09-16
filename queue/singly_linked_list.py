@@ -18,6 +18,16 @@ class LinkedList:
         self.head = None
         self.tail = None
 
+    def add_to_head(self, value):
+        new_node = Node(value, None)
+
+        if not self.head:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            new_node.set_next(self.head)
+            self.head = new_node
+
     def add_to_tail(self, value):
         new_node = Node(value, None)
 
@@ -39,6 +49,23 @@ class LinkedList:
         value = self.head.get_value()
         self.head = self.head.get_next()
         return value
+
+    def remove_tail(self):
+        if not self.tail and not self.head:
+            return None
+        if self.head.get_next() == None:
+            tail = self.head.get_value()
+            self.head = None
+            self.tail = None
+            return tail
+        else:
+            tail = self.tail.get_value()
+            current = self.head
+            while current.get_next() is not self.tail:
+                    current = current.get_next()
+            self.tail = current
+            self.tail.set_next(None)
+            return tail
 
     def contains(self, value):
         if not self.head:
@@ -62,21 +89,6 @@ class LinkedList:
             node = node.get_next()
         return high
 
-    def remove_tail(self):
-        if not self.tail and not self.head:
-            return None
-        if self.head.get_next() == None:
-            tail = self.head.get_value()
-            self.head = None
-            self.tail = None
-            return tail
-        else:
-            tail = self.tail.get_value()
-            current = self.head
-            while current.get_next() is not self.tail:
-                    current = current.get_next()
-            self.tail = current
-            self.tail.set_next(None)
-            return tail
+    
 
             
