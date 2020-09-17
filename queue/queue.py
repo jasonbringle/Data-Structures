@@ -21,7 +21,7 @@ queue = LinkedList()
 class Queue:
     def __init__(self):
         self.size = 0
-        self.storage = queue
+        self.storage = []
     
     def __len__(self):
         return self.size
@@ -35,3 +35,24 @@ class Queue:
             return None
         self.size -=1
         return queue.remove_tail()
+
+
+# class Queue:
+#     def __init__(self):
+#         self.size = 0
+#         self.storage = queue
+    
+#     def __len__(self):
+#         return self.size
+
+#     def enqueue(self, value):
+#         queue.add_to_head(value)
+#         self.size += 1
+
+#     def dequeue(self):
+#         if self.size == 0:
+#             return None
+#         self.size -=1
+#         return queue.remove_tail()
+
+            
