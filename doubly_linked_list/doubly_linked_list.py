@@ -144,7 +144,7 @@ class DoublyLinkedList:
             # Returns none if no nodes found
             return None
         #Assigns the starting point for the while loop as the first nodes "next" assignment
-        current = self.head.next
+        current = self.head
         #Assigns a variable to the first value in the loop
         max = self.head.value
         #Uses the iteratable "next" param as the iteratable
