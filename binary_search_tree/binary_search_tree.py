@@ -78,7 +78,7 @@ class BSTNode:
         # ----------------------------------------------
         # recursive approach
         # check if there is no node to the right
-          if self.right == None:
+        if not self.right:
             # return the nodes value
             return self.value
         # return a call to get max on the right child
