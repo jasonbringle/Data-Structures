@@ -78,7 +78,7 @@ class BSTNode:
         # ----------------------------------------------
         # recursive approach
         # check if there is no node to the right
-        if self.right == None:
+          if self.right == None:
             # return the nodes value
             return self.value
         # return a call to get max on the right child
@@ -112,28 +112,53 @@ class BSTNode:
         # if there is a node to the left
         if self.left:
             # call the function on the left value
-            fn(self.left)
+            self.left.for_each(fn)
         
         # if there is a node to the right
         if self.right:
             # call the function on the right node
-            fn(self.right)
+            self.right.for_each(fn)
             
     # Part 2 -----------------------
 
     # Print all the values in order from low to high
     # Hint:  Use a recursive, depth first traversal
     def in_order_print(self):
-        pass
+        #base case
+        # if there are no nodes
+            #return
+        #if there is a node to the left
+            #call in_order_print on the left
+        # print the value of the current node(self.value)
+        #if the re is a node to the right
+            #call in_order_print on the right
 
     # Print the value of every node, starting with the given node,
     # in an iterative breadth first traversal
-    def bft_print(self):
+    def bft_print(self): #use a queue
+        #Create a queue
+        # enqueue the first node (self)
+        # while there is data in the queue
+            # deque from queue on to current_node
+            # print the cureent_node value
+            # if the current_node has a left child
+                # enque the left child
+            # if the current node has a right child
+                #enque the right child
         pass
 
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
-    def dft_print(self):
+    def dft_print(self): #use a stack
+        #Create a stack
+        # push the first node (self)
+        # while there is data in the stack
+            # pop from stack on to current_node
+            # print the cureent_node value
+            # if the current_node has a left child
+                # push the left child
+            # if the current node has a right child
+                #push the right child
         pass
 
     # Stretch Goals -------------------------
