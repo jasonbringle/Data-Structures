@@ -9,6 +9,10 @@ This part of the project comprises two days:
 2. Implement the `in_order_print`, `bft_print`, and `dft_print` methods
    on the BSTNode class.
 """
+from queue import Queue
+from stack import Stack
+
+
 class BSTNode:
     def __init__(self, value):
         self.value = value
@@ -126,40 +130,63 @@ class BSTNode:
     def in_order_print(self):
         #base case
         # if there are no nodes
+        if not self:
             #return
+            return
         #if there is a node to the left
+        if self.left:
             #call in_order_print on the left
+            self.left.in_order_print()
         # print the value of the current node(self.value)
+        print(self.value)
         #if the re is a node to the right
+        if self.right:
             #call in_order_print on the right
+            self.right.in_order_print()
 
     # Print the value of every node, starting with the given node,
     # in an iterative breadth first traversal
     def bft_print(self): #use a queue
         #Create a queue
+        q = Queue()
         # enqueue the first node (self)
+        q.enqueue(self)
         # while there is data in the queue
+        while len(q) > 0:
             # deque from queue on to current_node
-            # print the cureent_node value
+            current = q.dequeue()
+            # print the curent_node value
+            print(current.value)
             # if the current_node has a left child
+            if current.left:
                 # enque the left child
+                q.enqueue(current.left)
             # if the current node has a right child
+            if current.right:
                 #enque the right child
-        pass
+                q.enqueue(current.right)
 
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
     def dft_print(self): #use a stack
         #Create a stack
+        s = Stack()
         # push the first node (self)
+        s.push(self)
         # while there is data in the stack
+        while len(s) > 0:
             # pop from stack on to current_node
+            current = s.pop()
             # print the cureent_node value
+            print(current.value)
             # if the current_node has a left child
+            if current.left:
                 # push the left child
+                s.push(current.left)
             # if the current node has a right child
+            if current.right:
                 #push the right child
-        pass
+                s.push(current.right)
 
     # Stretch Goals -------------------------
     # Note: Research may be required
